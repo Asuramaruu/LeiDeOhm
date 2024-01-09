@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <br>
+    <input type="text"  id="inpTensao1" placeholder="Tensão (V)">
+    <input type="text" id="inpCorrente" placeholder="Corrente (A)">
+    <input type="text" id="inpSaidaResistencia" placeholder="Resistência Total (R)">
+    <button onclick="CalcularR()">CalcularR</button>
+    
+
+   <br><input type="text" id="inpTensao2" placeholder="Volts (V)">
+    <input type="text" id="inpResistência1" placeholder="Resistência (R)">
+    <input type="text" id="inpSaidaCorrente" placeholder="Corrente Total (I)">
+    <button onclick="CalcularI()">CalcularI</button>
+
+    <br><input type="text" id="inpResistência2" placeholder="Resistência (R)">
+    <input type="text" id="inpCorrente2" placeholder="Corrente (I)"> 
+    <input type="text" id="inpSaidaTensão" placeholder="Tensão Total (V)">
+    <button onclick="CalcularV()">CalcularV</button>
+
+
+    <script>
+        function CalcularR()
+        {
+            var resistência, tensão, corrente
+            tensão = parseFloat(document.getElementById("inpTensao1").value)
+            corrente = parseFloat(document.getElementById("inpCorrente").value)
+            resistência = tensão / corrente
+
+            document.getElementById("inpSaidaResistencia").value = resistência
+        }
+
+        function CalcularI()
+        {
+            var corrente, resistência, tensão
+            tensão = parseFloat(document.getElementById("inpTensao2").value)
+            resistência = parseFloat(document.getElementById("inpResistência1").value)
+            corrente = tensão / resistência
+
+            document.getElementById("inpSaidaCorrente").value = corrente
+        }
+
+        function CalcularV()
+        {
+            var tensão, resistência, corrente
+            resistência = parseFloat(document.getElementById("inpResistência2").value)
+            corrente = parseFloat(document.getElementById("inpCorrente2").value)
+            tensão = resistência * corrente
+
+            document.getElementById("inpSaidaTensão").value = tensão
+        }
+
+
+
+    </script>
+    
+    
+</body>
+</html>
